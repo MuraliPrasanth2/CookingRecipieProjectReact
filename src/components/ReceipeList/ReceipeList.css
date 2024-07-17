@@ -1,0 +1,46 @@
+.receipies-container {
+  display: grid;
+  max-width: 860px;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 20px auto;
+  gap: 10px;
+}
+
+.receipe-item {
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 10px #bbb;
+}
+
+.receipe-item h2 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.duration {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: grey;
+}
+
+.method {
+  margin-top: 20px;
+  font-size: 0.9em;
+}
+
+.receipe-item .btn {
+  text-decoration: none;
+  display: block;
+  margin-top: 20px;
+  border: 0;
+  border-radius: 4px;
+  background: #ddd;
+  padding: 5px;
+  v-align: center;
+  color: #444;
+}
+
+.receipe-item:hover {
+  transform: rotateZ(3deg);
+  transition: all ease 0.25s;
+}

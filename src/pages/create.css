@@ -1,0 +1,50 @@
+.createForm {
+  max-width: 400px;
+  margin: 40px auto;
+}
+
+.createForm label {
+  display: block;
+  margin: 40px 0;
+}
+
+.createForm .label {
+  text-align: left;
+  color: #444;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.createForm input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.createForm .btn {
+  background: #50228c;
+  width: 100%;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.ingredientLine {
+  display: flex;
+  gap: 5px;
+}
+
+.ingredientLine button {
+  flex-grow: 1;
+  padding: 10px;
+  color: white;
+  background: #50228c;
+  border-radius: 4px;
+}
+
+button {
+  cursor: pointer;
+}
