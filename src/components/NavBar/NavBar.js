@@ -2,10 +2,12 @@ import "./NavBar.css";
 import React from "react";
 import { Link } from "react-router-dom";
 import SearchReceipe from "../SearchReceipe/SearchReceipe";
+import { useTheme } from "../../hooks/useTheme";
 
 export default function NavBar() {
+    const { color } = useTheme();
     return (
-        <nav>
+        <nav style={{ backgroundColor: color }}>
             <div className="nav">
                 <h1>
                     <Link to="/">Cooking Ninja</Link>

@@ -12,9 +12,16 @@
   box-shadow: 4px 4px 10px #bbb;
 }
 
+.dark .receipe-item {
+  box-shadow: 4px 4px 10px #222;
+}
 .receipe-item h2 {
   font-size: 1rem;
   margin-bottom: 10px;
+}
+
+.dark .receipe-item h2 {
+  color: white;
 }
 
 .duration {
@@ -23,11 +30,20 @@
   color: grey;
 }
 
+.dark .duration {
+  color: #eee;
+}
+
+.dark .duration {
+  color: #eee;
+}
 .method {
   margin-top: 20px;
   font-size: 0.9em;
 }
-
+.dark .method {
+  color: #bbb;
+}
 .receipe-item .btn {
   text-decoration: none;
   display: block;
@@ -38,6 +54,11 @@
   padding: 5px;
   v-align: center;
   color: #444;
+}
+
+.dark .receipe-item .btn {
+  background-color: black;
+  color: #eee;
 }
 
 .receipe-item:hover {

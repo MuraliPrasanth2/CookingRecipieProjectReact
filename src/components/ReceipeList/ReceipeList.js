@@ -7,7 +7,7 @@ export default function ReceipeList({ receipies }) {
         <div className="receipies-container">
             {receipies.map((recipe) => {
                 return (
-                    <div className="receipe-item">
+                    <div className="receipe-item" key={recipe.id}>
                         <h2>{recipe.title}</h2>
                         <p className="duration">{recipe.cookingTime}</p>
                         <p className="method">{recipe.method.substring(0, 30)}</p>

@@ -1,0 +1,31 @@
+.mode-color-changer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.colors {
+  margin-left: auto;
+  display: flex;
+}
+
+.color {
+  margin-left: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modes {
+  margin-right: auto;
+}
+
+.mode {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
