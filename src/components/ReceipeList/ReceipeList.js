@@ -1,8 +1,12 @@
+import { projectFirestore } from "../../firebase/config";
 import "./ReceipeList.css";
 import React from "react";
 import { Link } from "react-router-dom";
 
 export default function ReceipeList({ receipies }) {
+    const deleteRecipe = (id) => {
+        projectFirestore.collection("recipes").doc(id).delete();
+    };
     return (
         <div className="receipies-container">
             {receipies.map((recipe) => {
@@ -14,6 +18,14 @@ export default function ReceipeList({ receipies }) {
                         <Link className="btn" to={"/recipe/" + recipe.id}>
                             start cooking
                         </Link>
+                        <div
+                            className="deleteIcon"
+                            onClick={() => {
+                                deleteRecipe(recipe.id);
+                            }}
+                        >
+                            delete
+                        </div>
                     </div>
                 );
             })}

@@ -1,6 +1,6 @@
 import "./create.css";
+import { projectFirestore } from "../firebase/config";
 import { useEffect, useState } from "react";
-import { useFetch } from "../hooks/useFetch";
 import { useNavigate } from "react-router-dom";
 
 const Create = () => {
@@ -9,9 +9,8 @@ const Create = () => {
     const [method, setMethod] = useState("");
     const [cookingTime, setCookingTime] = useState(0);
     const [ingredients, setIngredients] = useState([]);
-    const url = "http://localhost:3000/recipes";
-    const { data, isPending, postData } = useFetch(url, "POST");
     const navigate = useNavigate();
+    const [isPending, setIsPending] = useState(false);
 
     const handleAddIngredient = (e) => {
         e.preventDefault();
@@ -21,7 +20,7 @@ const Create = () => {
         }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const dataToPost = {
             title,
@@ -29,7 +28,14 @@ const Create = () => {
             method,
             cookingTime,
         };
-        postData(dataToPost);
+        try {
+            setIsPending(true);
+            await projectFirestore.collection("recipes").add(dataToPost);
+            navigate("/");
+            setIsPending(false);
+        } catch (error) {
+            setIsPending(false);
+        }
     };
 
     useEffect(() => {
@@ -38,10 +44,7 @@ const Create = () => {
         setIngredients([]);
         setCookingTime(0);
         setMethod("");
-        if (data) {
-            navigate("/");
-        }
-    }, [data]);
+    }, []);
 
     return (
         <form className="createForm" onSubmit={handleSubmit}>

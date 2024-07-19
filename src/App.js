@@ -10,7 +10,6 @@ import Search from "./pages/Search";
 
 function App() {
     const { mode } = useTheme();
-    console.log(mode);
     return (
         <div className={"App " + (mode === "dark" ? "dark" : "light")}>
             <BrowserRouter>
